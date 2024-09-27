@@ -1,0 +1,17 @@
+{
+  "name": "@monax-owo/style",
+  "version": "0.1.0",
+  "description": "",
+  "author": "monax-owo",
+  "packageManager": "pnpm@9.7.0",
+  "scripts": {
+    "build": "sass src/util.scss:dist/util.css src/global.scss:dist/global.css --style=compressed",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "src"
+  ],
+  "devDependencies": {
+    "sass": "^1.79.3"
+  }
+}
