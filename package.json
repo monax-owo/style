@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
-    "src"
+    "src/*"
   ],
   "devDependencies": {
     "sass": "^1.79.3"
