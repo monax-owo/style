@@ -9,7 +9,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "exports": {
-    ".": "./src/*.scss"
+    ".": {
+      "sass": "./src/*.scss"
+    }
   },
   "devDependencies": {
     "sass": "^1.79.3"
