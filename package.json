@@ -6,12 +6,18 @@
   "packageManager": "pnpm@9.7.0",
   "scripts": {
     "build": "sass src/util.scss:dist/util.css src/global.scss:dist/global.css --style=compressed",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "prettier --check .",
+    "format": "prettier --write .",
+    "test": "pnpm format && pnpm lint && pnpm build && echo success!",
+    "prepare": "husky"
   },
   "exports": {
     "./*": "./src/*"
   },
   "devDependencies": {
-    "sass": "^1.79.3"
+    "husky": "^9.1.6",
+    "prettier": "^3.3.3",
+    "prettier-plugin-css-order": "^2.1.2",
+    "sass-embedded": "^1.79.3"
   }
 }
