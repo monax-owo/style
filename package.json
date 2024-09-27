@@ -8,9 +8,9 @@
     "build": "sass src/util.scss:dist/util.css src/global.scss:dist/global.css --style=compressed",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "files": [
-    "src/*"
-  ],
+  "exports": {
+    "*": "./src/*"
+  },
   "devDependencies": {
     "sass": "^1.79.3"
   }
