@@ -1,6 +1,6 @@
 {
   "name": "@monax-owo/style",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "author": "monax-owo",
   "packageManager": "pnpm@9.7.0",
@@ -14,6 +14,11 @@
   "exports": {
     "./*": "./style/*"
   },
+  "files": [
+    "style",
+    "!**/.vscode",
+    "!**/.husky"
+  ],
   "devDependencies": {
     "husky": "^9.1.6",
     "prettier": "^3.3.3",
