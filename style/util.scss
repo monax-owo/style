@@ -8,6 +8,7 @@
 }
 
 .hover-1 {
+  transition-duration: var(--t-duration);
   @include hover() {
     background-color: var(--hover-bg);
   }
