@@ -3,6 +3,7 @@
 .active {
   background-color: var(--bg);
   @include hover("active") {
+    transition-duration: var(--t-duration);
     background-color: var(--hover-bg);
   }
 }
@@ -10,6 +11,7 @@
 .hover {
   background-color: var(--bg);
   @include hover("hover") {
+    transition-duration: var(--t-duration);
     background-color: var(--hover-bg);
   }
 }
@@ -17,6 +19,7 @@
 .default {
   background-color: var(--bg);
   @include hover("default") {
+    transition-duration: var(--t-duration);
     background-color: var(--hover-bg);
   }
 }
