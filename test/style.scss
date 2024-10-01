@@ -1,3 +1,22 @@
-.test {
-  
+@import "../style/global";
+
+.active {
+  background-color: var(--bg);
+  @include hover("active") {
+    background-color: var(--hover-bg);
+  }
+}
+
+.hover {
+  background-color: var(--bg);
+  @include hover("hover") {
+    background-color: var(--hover-bg);
+  }
+}
+
+.default {
+  background-color: var(--bg);
+  @include hover("default") {
+    background-color: var(--hover-bg);
+  }
 }

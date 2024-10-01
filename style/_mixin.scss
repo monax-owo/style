@@ -30,15 +30,29 @@ $orientation: (
   box-shadow: 0 0 $blur 0px var(--s-bg);
 }
 
+$hover-type: ("active", "hover", "default");
 // モバイルのときはhoverの代わりにactiveを使うようにする
-@mixin hover() {
-  &:active {
-    @content;
+// sample:
+// @import "@monax-owo/style/global";
+// @include hover() {
+//   background-color: var(--hover-bg);
+// }
+@mixin hover($mode: "default") {
+  @if index($hover-type, $mode) == null {
+    @error "value: \"#{$mode}\" `$mode` は #{nth($hover-type, 1)}, #{nth($hover-type, 2)}, #{nth($hover-type, 3)} のいずれかにしてください。";
   }
 
-  @include media(md) {
-    &:hover {
+  @if not($mode == nth($hover-type, 2)) {
+    &:active {
       @content;
+    }
+  }
+
+  @if not($mode == nth($hover-type, 1)) {
+    @include media(md) {
+      &:hover {
+        @content;
+      }
     }
   }
 }
