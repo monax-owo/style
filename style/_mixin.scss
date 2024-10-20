@@ -42,7 +42,7 @@ $hover-type: ("active", "hover", "default");
 // }
 @mixin hover($mode: "default") {
   @if list.index($hover-type, $mode) == null {
-    @error "value: \"#{$mode}\" `$mode` は #{nth($hover-type, 1)}, #{nth($hover-type, 2)}, #{nth($hover-type, 3)} のいずれかにしてください。";
+    @error "value: \"#{$mode}\" `$mode` は #{list.nth($hover-type, 1)}, #{list.nth($hover-type, 2)}, #{list.nth($hover-type, 3)} のいずれかにしてください。";
   }
 
   @if not($mode == list.nth($hover-type, 2)) {
@@ -51,7 +51,7 @@ $hover-type: ("active", "hover", "default");
     }
   }
 
-  @if not($mode == nth($hover-type, 1)) {
+  @if not($mode == list.nth($hover-type, 1)) {
     @include media(md) {
       &:hover {
         @content;
