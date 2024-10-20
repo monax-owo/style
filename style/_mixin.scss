@@ -1,3 +1,6 @@
+@use "sass:list";
+@use "sass:map";
+
 $breakpoints: (
   undefined: "screen and (min-width: 400px)",
   sm: "screen and (min-width: 640px)",
@@ -10,7 +13,7 @@ $breakpoints: (
 // smの場合640px以上のときにスタイルが適用される
 // @include media(sm) {...style}
 @mixin media($breakpoint) {
-  @media #{map-get($breakpoints, $breakpoint)} {
+  @media #{map.get($breakpoints, $breakpoint)} {
     @content;
   }
 }
@@ -21,7 +24,7 @@ $orientation: (
 );
 
 @mixin orientation($arg) {
-  @media (orientation: #{map-get($orientation,$arg)}) {
+  @media (orientation: #{map.get($orientation,$arg)}) {
     @content;
   }
 }
@@ -38,11 +41,11 @@ $hover-type: ("active", "hover", "default");
 //   background-color: var(--hover-bg);
 // }
 @mixin hover($mode: "default") {
-  @if index($hover-type, $mode) == null {
+  @if list.index($hover-type, $mode) == null {
     @error "value: \"#{$mode}\" `$mode` は #{nth($hover-type, 1)}, #{nth($hover-type, 2)}, #{nth($hover-type, 3)} のいずれかにしてください。";
   }
 
-  @if not($mode == nth($hover-type, 2)) {
+  @if not($mode == list.nth($hover-type, 2)) {
     &:active {
       @content;
     }
